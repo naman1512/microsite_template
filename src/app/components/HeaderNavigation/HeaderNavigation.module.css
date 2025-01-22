@@ -1,0 +1,191 @@
+/* General styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #f2e6d5;
+  color: #fff;
+  position: relative;
+
+  /* Adding grain effect */
+  background-image: url('/public/noise.svg');
+  background-size: cover;
+  background-blend-mode: multiply;
+  opacity: 0.7;  
+}
+
+.heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #045138;
+}
+
+
+/* Logo Styling */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  gap: 20px;
+}
+
+/* Search Bar Styling */
+.searchContainer {
+  padding-right: 25px;
+  order: 2;
+  position: relative;
+  width: 160px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.searchIcon {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #30895e;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on the search bar */
+.searchContainer:hover {
+  transform: scale(1.05);
+}
+
+.searchInput:focus {
+  box-shadow: 0 0 10px rgba(70, 255, 138, 0.7);
+}
+
+.searchIcon:hover {
+  color: #00f583;
+}
+
+/* Responsive Navigation */
+.nav {
+  order: 1;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #045138;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: #06b460;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #045138;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: #f2e6d5;
+    padding: 20px 0;
+    transition: bottom 0.5s ease-in-out;
+  }
+
+  .logo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    gap: 2px; /* Reduces space between logo and heading */
+  }
+  
+  .heading {
+    font-size: 0.8rem; 
+    color: #045138;
+    margin-top: 0; 
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .nav.open {
+    bottom: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Move search bar to center on mobile */
+  .searchContainer {
+    position: absolute;
+    left: 40%;
+    width: 25%;
+  }
+
+  .searchInput {
+    font-size: 1rem;
+  }
+
+  .searchIcon {
+    font-size: 1.2rem;
+  }
+}
+
+/* Hamburger Animation */
+.hamburger span:nth-child(1) {
+  transform-origin: top left;
+}
+
+.hamburger span:nth-child(3) {
+  transform-origin: bottom left;
+}
+
+.nav.open + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav.open + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav.open + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
