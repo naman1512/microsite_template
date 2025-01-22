@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Image src="/Bcg.svg" alt="Logo" width={100} height={50} />
+        <Image src="/Bcg.svg" alt="Logo" width={100} height={50} className={styles.imageLogo}/>
         <h1 className={styles.heading}>Internal Microsites</h1>
       </div>
      

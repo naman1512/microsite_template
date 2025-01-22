@@ -120,21 +120,26 @@
     left: 0;
     width: 100%;
     background: #f2e6d5;
-    padding: 20px 0;
+    padding: 10px 0;
     transition: bottom 0.5s ease-in-out;
   }
 
   .logo {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column; 
     align-items: center;
     text-align: center;
-    gap: 2px; /* Reduces space between logo and heading */
+    gap: 2px; 
+  }
+
+  .imageLogo{
+    height: 20px;
+    width:50px
   }
   
   .heading {
-    font-size: 0.8rem; 
+    font-size: 0.3rem; 
     color: #045138;
     margin-top: 0; 
   }
@@ -157,7 +162,7 @@
   .searchContainer {
     position: absolute;
     left: 40%;
-    width: 25%;
+    width: 5%;
   }
 
   .searchInput {
